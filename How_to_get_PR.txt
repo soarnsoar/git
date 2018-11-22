@@ -1,0 +1,40 @@
+> (1) Clone the master
+>> git clone git@github.com:cms-sw/genproductions.git
+> (2)go to git area directory
+>> cd genproduction
+> (3)make my own local branch
+>> git checkout -b test
+> (4) Merge 1st PR (https://github.com/cms-sw/genproductions/pull/1790/) :
+> and let the new branch's name( where #1790 is merge to) to pr-1790
+>> git pull origin pull/1790/head:pr-1790
+> I got 4 CONFLICTS on this step
+> CONFLICT (content): Merge conflict in test/calculateXSectionAndFilterEfficiency/calculateXSectionAndFilterEfficiency.sh
+> CONFLICT (content): Merge conflict in bin/MadGraph5_aMCatNLO/gridpack_generation.sh
+> CONFLICT (add/add): Merge conflict in bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/MSSMD/MSSMD_run_card.dat
+> CONFLICT (add/add): Merge conflict in bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/ALP/ALP_run_card.dat
+>
+> By 'git status' ,  I can check the files :
+> # Unmerged paths:
+> #   (use "git add <file>..." to mark resolution)
+> #
+> #     both added:         bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/ALP/ALP_run_card.dat
+> #     both added:         bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/MSSMD/MSSMD_run_card.dat
+> #     both modified:      bin/MadGraph5_aMCatNLO/gridpack_generation.sh
+> #     both modified:      test/calculateXSectionAndFilterEfficiency/calculateXSectionAndFilterEfficiency.sh
+> #
+>
+>
+> It must be because master was modified after PR had been requested...(Sorry..)
+> So, I chose the latest contents by my hands for each files. and did "git add"
+>> git add bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/ALP/ALP_run_card.dat
+>> git add bin/MadGraph5_aMCatNLO/cards/production/2017/13TeV/MSSMD/MSSMD_run_card.dat
+>> git add bin/MadGraph5_aMCatNLO/gridpack_generation.sh
+>> git add test/calculateXSectionAndFilterEfficiency/calculateXSectionAndFilterEfficiency.sh
+>
+>> git commit
+> Now the PR is merged into my current branch
+> [jhchoi@login genproductions]$ git branch -vv
+>    master  bf5f8aa [origin/master] Merge pull request #1928 from cms-sw/improve_error_message
+>    pr-1790 8d48fef Merge pull request #1909 from wywdiablo/addMyFile1
+> * test    5823609 Merge commit 'refs/pull/1790/head' of github.com:cms-sw/genproductions into test
+>

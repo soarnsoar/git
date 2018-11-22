@@ -1,0 +1,16 @@
+
+reference:
+https://wayhome25.github.io/git/2017/07/08/git-first-pull-request-story/
+
+
+(1) fork genproduction into my repository 
+(2) clone mg26x from my repository (which you want to modify) 
+(3)make a new branch (git checkout -b <mybranchname>
+(4)add the line
+(5) "add -A"->"commit"->push to my new branch in my genproduction repository 
+> add -A
+> commit -m "<memo>"
+> push origin <mybranchname>
+
+(6) now my branch need to be PRed to mg26x of cmssw genproduction. Click Compare & PullRequest.
+(7)PR from my branch to mg26x of cmssw-genproduction.

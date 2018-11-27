@@ -6,6 +6,7 @@ https://wayhome25.github.io/git/2017/07/08/git-first-pull-request-story/
 (1) fork genproduction into my repository 
 (2) clone mg26x from my repository (which you want to modify) 
 (3)make a new branch (git checkout -b <mybranchname>
+(3-1) add original remote repo.(CMSSW)(git remote add cmssw_origin git@github.com:cms-sw/genproduction ) 
 (4)add the line
 (5) "add -A"->"commit"->push to my new branch in my genproduction repository 
 > add -A
